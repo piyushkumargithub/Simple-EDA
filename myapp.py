@@ -7,6 +7,8 @@ import seaborn as sbn
 import matplotlib.pyplot as plt
 
 @st.cache(persist=True)
+
+#target is still needed to work on
 def load_data(selectbox):
     
     path="Datasets/"+selectbox+".csv"
