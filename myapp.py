@@ -22,12 +22,12 @@ def load_own_data(file):
     return data,target
 
 options=["Hyper Cars",
-    "netflix titles",
+    #"netflix titles",
     "Spotify songs",
-    "Game Awards",
+    #"Game Awards",
     "Pokemon",
     #"googleplaystore",
-    "Fifa players"]
+    #"Fifa players"]
 
 
 def main():
