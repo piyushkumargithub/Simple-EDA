@@ -26,7 +26,7 @@ options=["Hyper Cars",
     "Spotify songs",
     "Game Awards",
     "Pokemon",
-    "googleplaystore",
+    #"googleplaystore",
     "Fifa players"]
 
 
