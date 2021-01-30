@@ -27,7 +27,8 @@ options=["Hyper Cars",
     #"Game Awards",
     "Pokemon",
     #"googleplaystore",
-    #"Fifa players"]
+    #"Fifa players"
+        ]
 
 
 def main():
