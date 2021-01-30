@@ -62,7 +62,7 @@ def main():
             
             fig,ax=plt.subplots()
             ax=sbn.scatterplot(data=data,x=X_axis,y=Y_axis)
-            plt.xticks(rotation="vertical")
+            plt.xticks(rotation="vertical",size=10)
             st.pyplot(fig)
 
         
