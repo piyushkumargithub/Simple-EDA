@@ -73,17 +73,40 @@ def main():
             Plot.createScatter(data,X_axis,Y_axis)
 
     elif plotoption=="Swarmplot":
-        pass
+        st.sidebar.title("Plot Swarmplot between 2 features ")
+        X_axis = st.sidebar.selectbox("For x axis", options=data.columns.tolist())
+        Y_axis = st.sidebar.selectbox("For y axis", options=data.columns.tolist())
+        if st.sidebar.button("Show Plot"):
+            Plot.createSwarm(data, X_axis, Y_axis)
+
+
+
+
         #part still under construction
     
     elif plotoption=="Lineplot":
-        pass
+        st.sidebar.title("Plot Lineplot between 2 features ")
+        X_axis = st.sidebar.selectbox("For x axis", options=data.columns.tolist())
+        Y_axis = st.sidebar.selectbox("For y axis", options=data.columns.tolist())
+        if st.sidebar.button("Show Plot"):
+            Plot.createLine(data, X_axis, Y_axis)
 
     elif plotoption=="Heatmap":
-        pass
+        st.sidebar.title("Plot Heatmap between 2 features ")
+
+        #Axis not required
+        # X_axis = st.sidebar.selectbox("For x axis", options=data.columns.tolist())
+        # Y_axis = st.sidebar.selectbox("For y axis", options=data.columns.tolist())
+        if st.sidebar.button("Show Plot"):
+            Plot.createHeat(data)
+
 
     elif plotoption=="Barplot":
-        pass
+        st.sidebar.title("Plot Barplot between 2 features ")
+        X_axis = st.sidebar.selectbox("For x axis", options=data.columns.tolist())
+        Y_axis = st.sidebar.selectbox("For y axis", options=data.columns.tolist())
+        if st.sidebar.button("Show Plot"):
+            Plot.createBar(data,X_axis,Y_axis)
 
 
 
