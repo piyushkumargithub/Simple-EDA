@@ -3,6 +3,8 @@ import streamlit as st
 import pandas as pd 
 import numpy as np 
 import sklearn
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression
 
 import matplotlib.pyplot as plt
 import Plot
@@ -110,6 +112,46 @@ def main():
 
 
 
+    regression = st.sidebar.checkbox("Check to apply regression algorithm")
+    if regression:
+       regModels(data) 
+
+
+
+def regModels(data):
+    mlAlgorithms=["Simple Linear Regression","Multiple Linear Regression","Polynomial Regression","Support Vector Regression"]
+    mlAlgorithm=st.sidebar.selectbox("which algorithm you want to apply",mlAlgorithms)
+    
+    
+    if mlAlgorithm=="Simple Linear Regression":
+        # to get only columns with numerical values select_dtypes is used here
+        X=st.sidebar.selectbox("Feature ",options=data.select_dtypes(include=np.number).columns.tolist())
+        Y=st.sidebar.selectbox("Target ",data.select_dtypes(include=np.number).columns.tolist())
+        
+        
+        #this part is still in development and will break
+        Xdata=data[X].values.reshape(-1,1)
+        Ydata=data[Y].values.reshape(-1,1)
+        #test set size 
+        
+        
+        
+        test_size=st.sidebar.slider(label="test set size",min_value=0.0,max_value=1.0,step=0.1) 
+        
+        X_train, X_test, y_train, y_test = train_test_split(Xdata,Ydata, test_size = test_size, random_state = 0)
+        regressor = LinearRegression()
+        regressor.fit(X_train, y_train)
+        y_pred = regressor.predict(X_test)
+
+        
+        plt.scatter(X_train, y_train, color = 'red')
+        plt.plot(X_train, regressor.predict(X_train), color = 'blue')
+        plt.title((X+" vs "+ Y))
+        plt.xlabel(X)
+        plt.ylabel(Y)
+        st.pyplot()
+        
+        #part still to implement
 
     
     
@@ -124,3 +166,4 @@ def main():
 
 if __name__=='__main__':
     main()
+   
