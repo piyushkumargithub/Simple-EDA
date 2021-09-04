@@ -143,14 +143,22 @@ def regModels(data):
         regressor.fit(X_train, y_train)
         y_pred = regressor.predict(X_test)
 
-        
-        plt.scatter(X_train, y_train, color = 'red')
-        plt.plot(X_train, regressor.predict(X_train), color = 'blue')
-        plt.title((X+" vs "+ Y))
-        plt.xlabel(X)
-        plt.ylabel(Y)
-        st.pyplot()
-        
+
+
+        fig,(ax1,ax2)=plt.subplots(1,2,figsize=(10,5))
+        fig.tight_layout(pad=5)
+        ax1.scatter(X_train,y_train)
+        ax1.plot(X_train,regressor.predict(X_train))
+        ax1.set_title((X+" vs "+ Y))
+        ax1.set_xlabel(X)
+        ax1.set_ylabel(Y)
+        ax2.scatter(X_test,y_test)
+        ax2.plot(X_test, y_pred)
+        ax2.set_title((X + " vs " + Y))
+        ax2.set_xlabel(X)
+        ax2.set_ylabel(Y)
+        st.pyplot(fig)
+        # plt.show(ax1)
         #part still to implement
 
     
