@@ -2,12 +2,11 @@ from numpy.core.fromnumeric import size
 import streamlit as st
 import pandas as pd 
 import numpy as np 
-import sklearn
 
 import matplotlib.pyplot as plt
 import Plot
 
-@st.cache(persist=True)
+@st.cache_data(persist=True)
 
 #target is still needed to work on
 def load_data(selectbox):
