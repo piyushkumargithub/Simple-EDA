@@ -143,7 +143,7 @@ def regModels(data):
         # test set size
 
         test_size = st.sidebar.slider(
-            label="test set size", min_value=0.01, max_value=1.0, step=0.1)
+            label="test set size", min_value=0.1, max_value=0.9, step=0.1)
 
         
 
