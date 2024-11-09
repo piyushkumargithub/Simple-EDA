@@ -35,7 +35,7 @@ def main():
     
     
     st.title("SIMPLE EDA")
-    st.sidebar.title("It all begins here")
+    st.sidebar.title("Data exploration made simple")
     st.markdown("<h3> WELCOME </h3>",unsafe_allow_html=True)
 
     #select to choose from available csv files
