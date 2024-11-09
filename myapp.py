@@ -5,7 +5,6 @@ import numpy as np
 import sklearn
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
-
 import matplotlib.pyplot as plt
 
 #custom made modules
@@ -13,7 +12,9 @@ import Plot
 import regression as ra
 
 
-@st.cache(persist=True)
+@st.cache_data(persist=True)
+
+
 # target is still needed to work on
 def load_data(selectbox):
 
